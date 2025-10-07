@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harvester Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #2e7d32;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #4caf50;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #2e7d32;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #388e3c;
+        }
+        .harvester-list {
+            margin-top: 20px;
+        }
+        .harvester-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2e7d32;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Harvester Booking System</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#booking">Book a Harvester</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <section id="booking">
+            <h2>Book a Harvester</h2>
+            <form action="submit_booking.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="harvester">Select Harvester</label>
+                    <select id="harvester" name="harvester" required>
+                        <option value="">--Choose Harvester--</option>
+                        <option value="combine">Combine Harvester</option>
+                        <option value="forage">Forage Harvester</option>
+                        <option value="sugarcane">Sugarcane Harvester</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Booking Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Farm Location</label>
+                    <textarea id="location" name="location" rows="4" required></textarea>
+                </div>
+                <button type="submit">Submit Booking</button>
+            </form>
+        </section>
+        <section id="available" class="harvester-list">
+            <h2>Available Harvesters</h2>
+            <div class="harvester-item">
+                <h3>Combine Harvester</h3>
+                <p>Capacity: 10 acres/day | Price: $200/day</p>
+            </div>
+            <div class="harvester-item">
+                <h3>Forage Harvester</h3>
+                <p>Capacity: 8 acres/day | Price: $180/day</p>
+            </div>
+            <div class="harvester-item">
+                <h3>Sugarcane Harvester</h3>
+                <p>Capacity: 12 acres/day | Price: $250/day</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Harvester Booking System. All rights reserved.</p>
+    </footer>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harvester Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #2e7d32;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #4caf50;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #2e7d32;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #388e3c;
+        }
+        .harvester-list {
+            margin-top: 20px;
+        }
+        .harvester-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2e7d32;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Harvester Booking System</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#booking">Book a Harvester</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <section id="booking">
+            <h2>Book a Harvester</h2>
+            <form action="submit_booking.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="harvester">Select Harvester</label>
+                    <select id="harvester" name="harvester" required>
+                        <option value="">--Choose Harvester--</option>
+                        <option value="combine">Combine Harvester</option>
+                        <option value="forage">Forage Harvester</option>
+                        <option value="sugarcane">Sugarcane Harvester</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Booking Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Farm Location</label>
+                    <textarea id="location" name="location" rows="4" required></textarea>
+                </div>
+                <button type="submit">Submit Booking</button>
+            </form>
+        </section>
+        <section id="available" class="harvester-list">
+            <h2>Available Harvesters</h2>
+            <div class="harvester-item">
+                <h3>Combine Harvester</h3>
+                <p>Capacity: 10 acres/day | Price: $200/day</p>
+            </div>
+            <div class="harvester-item">
+                <h3>Forage Harvester</h3>
+                <p>Capacity: 8 acres/day | Price: $180/day</p>
+            </div>
+            <div class="harvester-item">
+                <h3>Sugarcane Harvester</h3>
+                <p>Capacity: 12 acres/day | Price: $250/day</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Harvester Booking System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
